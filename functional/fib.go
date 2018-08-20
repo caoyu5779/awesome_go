@@ -5,18 +5,12 @@ import (
 	"io"
 	"bufio"
 	"strings"
+	"selfLearning/functional/Fib"
 )
 
 // 1,1,2,3,5,8,13, ...
 // a,b
 //   a,b
-func fibonacci() intGen {
-	a, b := 0, 1
-	return func() int {
-		a, b = b, a +b
-		return a
-	}
-}
 
 type intGen func() int
 
@@ -42,7 +36,8 @@ func printFileContents(reader io.Reader){
 }
 
 func main() {
-	f := fibonacci()
+	//f := fibonacci()
+	var f intGen = Fib.Fibonacci()
 
 	printFileContents(f)
 	//fmt.Println(f()) //1
