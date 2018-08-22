@@ -25,11 +25,12 @@ func errWrapper(handler appHandler) func(writer http.ResponseWriter, request *ht
 		if err != nil{
 			//log.Warn("Error handling request : %s", err.Error())
 			log.Printf("Error occured " + "handler request : %s", err.Error())
-
+			// user Error
 			if userErr, ok := err.(userErr) ; ok {
 				http.Error(writer, userErr.Message(), http.StatusBadRequest)
 				return
 			}
+			// system Error
 			code := http.StatusOK
 			switch {
 			case os.IsNotExist(err):

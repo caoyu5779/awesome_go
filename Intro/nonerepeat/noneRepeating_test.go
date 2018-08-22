@@ -27,7 +27,12 @@ func TestSubstr (t *testing.T){
 
 func BenchmarkSubstr(b *testing.B){
 	s := "我爱拜仁"
+	for i := 0; i <13 ; i++{
+		s += s
+	}
+	b.Logf("len(s) = %d", len(s))
 	ans := 4
+	b.ResetTimer()
 
 	for i := 0; i < b.N; i++{
 		actual := lengthOfNonRepeatingSubStr(s)
