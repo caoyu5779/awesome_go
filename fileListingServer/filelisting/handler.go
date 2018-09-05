@@ -1,9 +1,9 @@
 package filelisting
 
 import (
+	"io/ioutil"
 	"net/http"
 	"os"
-	"io/ioutil"
 	"strings"
 )
 
@@ -11,7 +11,7 @@ const prefix = "/list/"
 
 type userError string
 
-func (e userError) Error() string{
+func (e userError) Error() string {
 	return e.Message()
 }
 
@@ -34,9 +34,9 @@ func HandleFileList(writer http.ResponseWriter, request *http.Request) error {
 
 	defer file.Close()
 
-	all,err := ioutil.ReadAll(file)
+	all, err := ioutil.ReadAll(file)
 
-	if err != nil{
+	if err != nil {
 		return err
 	}
 	writer.Write(all)

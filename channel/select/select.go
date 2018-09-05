@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"math/rand"
+	"time"
 )
 
-func generator() chan int{
+func generator() chan int {
 	out := make(chan int)
 
 	go func() {
@@ -29,7 +29,7 @@ func worker(id int, c chan int) {
 	}
 }
 
-func createWorker(id int ) chan int{
+func createWorker(id int) chan int {
 	c := make(chan int)
 
 	go worker(id, c)
@@ -39,7 +39,7 @@ func createWorker(id int ) chan int{
 
 func main() {
 	var c1, c2 = generator(), generator()
-	var worker = createWorker(0)//nil channel
+	var worker = createWorker(0) //nil channel
 
 	var values []int
 	tm := time.After(10 * time.Second)
@@ -56,19 +56,19 @@ func main() {
 		}
 
 		select {
-		case n := <- c1:
+		case n := <-c1:
 			values = append(values, n)
-		case n := <- c2:
+		case n := <-c2:
 			values = append(values, n) //收到的值 缓存起来
 		case activeWorker <- activeValue:
 			values = values[1:]
-			case <- time.After(800 * time.Millisecond):
-				fmt.Println("timeout")
-			case <- tick: //反应系统状态
-				fmt.Println("queue length = ",len(values))
-			case <- tm:
-				fmt.Println("bye")
-				return
+		case <-time.After(800 * time.Millisecond):
+			fmt.Println("timeout")
+		case <-tick: //反应系统状态
+			fmt.Println("queue length = ", len(values))
+		case <-tm:
+			fmt.Println("bye")
+			return
 		}
 	}
 }

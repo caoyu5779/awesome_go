@@ -8,16 +8,16 @@ import (
 func chanDemo() {
 	//var c chan int // c == nil
 	var channels [10]chan int
-	for i := 0; i<10; i++{
+	for i := 0; i < 10; i++ {
 		channels[i] = createWorker(i)
 	}
 
-	for i := 0; i <10; i++{
-		channels[i] <-'a'+i
+	for i := 0; i < 10; i++ {
+		channels[i] <- 'a' + i
 	}
 
-	for i := 0; i <10; i++{
-		channels[i] <-'A'+i
+	for i := 0; i < 10; i++ {
+		channels[i] <- 'A' + i
 	}
 	time.Sleep(time.Millisecond)
 }
@@ -29,7 +29,7 @@ func worker(id int, c chan int) {
 	}
 }
 
-func createWorker(id int ) chan int{
+func createWorker(id int) chan int {
 	c := make(chan int)
 
 	go worker(id, c)

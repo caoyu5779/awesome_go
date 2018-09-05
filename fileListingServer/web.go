@@ -4,17 +4,18 @@ import (
 	"net/http"
 	_ "net/http/pprof"
 
-	"selfLearning/fileListingServer/filelisting"
-	"os"
 	"log"
+	"os"
+	"selfLearning/fileListingServer/filelisting"
 )
 
 type appHandler func(writer http.ResponseWriter, request *http.Request) error
+
 // 函数式 编程
 func errWrapper(handler appHandler) func(writer http.ResponseWriter, request *http.Request) {
-	return func(writer http.ResponseWriter, request *http.Request){
+	return func(writer http.ResponseWriter, request *http.Request) {
 		//recover
-		defer func(){
+		defer func() {
 			if r := recover(); r != nil {
 				log.Printf("Panic : %v", r)
 				http.Error(writer,
@@ -23,11 +24,11 @@ func errWrapper(handler appHandler) func(writer http.ResponseWriter, request *ht
 		}()
 		err := handler(writer, request)
 
-		if err != nil{
+		if err != nil {
 			//log.Warn("Error handling request : %s", err.Error())
-			log.Printf("Error occured " + "handler request : %s", err.Error())
+			log.Printf("Error occured "+"handler request : %s", err.Error())
 			// user Error
-			if userErr, ok := err.(userErr) ; ok {
+			if userErr, ok := err.(userErr); ok {
 				http.Error(writer, userErr.Message(), http.StatusBadRequest)
 				return
 			}
@@ -51,6 +52,7 @@ type userErr interface {
 	error
 	Message() string
 }
+
 func main() {
 	http.HandleFunc("/",
 		errWrapper(filelisting.HandleFileList))

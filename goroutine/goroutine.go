@@ -1,9 +1,9 @@
 package main
 
 import (
-	"time"
 	"fmt"
 	"runtime"
+	"time"
 )
 
 // goroutine 协程 Coroutine
@@ -14,7 +14,7 @@ import (
 
 func main() {
 	var a [10]int
-	for i:=0 ; i < 10 ; i++{
+	for i := 0; i < 10; i++ {
 		go func(i int) { //race condition! 数据访问冲突
 			for {
 				a[i]++

@@ -1,23 +1,23 @@
 package main
 
 import (
-	"testing"
-	"net/http"
-	"net/http/httptest"
-	"io/ioutil"
-	"strings"
-	"os"
 	"errors"
 	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"strings"
+	"testing"
 )
 
-func errPanic(writer http.ResponseWriter, request *http.Request) error{
+func errPanic(writer http.ResponseWriter, request *http.Request) error {
 	panic(123)
 }
 
 type testingUserError string
 
-func (e testingUserError) Error() string{
+func (e testingUserError) Error() string {
 	return e.Message()
 }
 
@@ -29,39 +29,39 @@ func errUserError(writer http.ResponseWriter, request *http.Request) error {
 	return testingUserError("user error")
 }
 
-func errNotFound (writer http.ResponseWriter, request *http.Request) error{
+func errNotFound(writer http.ResponseWriter, request *http.Request) error {
 	return os.ErrNotExist
 }
 
-func errNoPermission (writer http.ResponseWriter, request *http.Request) error{
+func errNoPermission(writer http.ResponseWriter, request *http.Request) error {
 	return os.ErrPermission
 }
 
-func errUnknown (writer http.ResponseWriter, request *http.Request) error{
+func errUnknown(writer http.ResponseWriter, request *http.Request) error {
 	return errors.New("unknown err")
 }
 
-func noError(writer http.ResponseWriter, request *http.Request) error{
+func noError(writer http.ResponseWriter, request *http.Request) error {
 	fmt.Fprintln(writer, "no error")
 	return nil
 }
 
 var tests = []struct {
-	h appHandler
-	code int
+	h       appHandler
+	code    int
 	message string
-	}{
-		{errPanic, 500, "Internal Server Error"},
-		{errUserError, 400, "user error"},
-		{errNotFound, 404, "Not Found"},
-		{errNoPermission, 403, "permission denied"},
-		{errUnknown, 500, "Internal Server Error"},
-		{noError, 200, "no error"},
+}{
+	{errPanic, 500, "Internal Server Error"},
+	{errUserError, 400, "user error"},
+	{errNotFound, 404, "Not Found"},
+	{errNoPermission, 403, "permission denied"},
+	{errUnknown, 500, "Internal Server Error"},
+	{noError, 200, "no error"},
 }
 
-func TestErrWrapper(t *testing.T){
+func TestErrWrapper(t *testing.T) {
 
-	for _,tt := range tests{
+	for _, tt := range tests {
 		f := errWrapper(tt.h)
 
 		response := httptest.NewRecorder()
@@ -73,12 +73,12 @@ func TestErrWrapper(t *testing.T){
 
 		f(response, request)
 
-		verifyResponse(response.Result(), tt.code, tt.message,t)
+		verifyResponse(response.Result(), tt.code, tt.message, t)
 	}
 }
 
-func TestErrWrapperInServer(t *testing.T){
-	for _,tt := range tests{
+func TestErrWrapperInServer(t *testing.T) {
+	for _, tt := range tests {
 		f := errWrapper(tt.h)
 		server := httptest.NewServer(http.HandlerFunc(f))
 		resp, _ := http.Get(server.URL)
@@ -87,7 +87,7 @@ func TestErrWrapperInServer(t *testing.T){
 	}
 }
 
-func verifyResponse(resp *http.Response, expectedCode int,expectedMsg string, t *testing.T) {
+func verifyResponse(resp *http.Response, expectedCode int, expectedMsg string, t *testing.T) {
 	b, _ := ioutil.ReadAll(resp.Body)
 	body := strings.Trim(string(b), "\n")
 	if resp.StatusCode != expectedCode || body != expectedMsg {

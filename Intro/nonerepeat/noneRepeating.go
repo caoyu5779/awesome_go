@@ -15,7 +15,7 @@ func lengthOfNonRepeatingSubStr(s string) int {
 
 	for i, ch := range []rune(s) {
 
-		if lastI, ok:= lastOccurred[ch] ; ok && lastI > start {
+		if lastI, ok := lastOccurred[ch]; ok && lastI > start {
 			start = lastI + 1
 		}
 

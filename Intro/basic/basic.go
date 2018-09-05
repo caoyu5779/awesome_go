@@ -1,17 +1,17 @@
 package main
 
 import (
-	"math"
 	"fmt"
+	"math"
 )
 
-func triangle(){
-	var a,b int = 3,4
+func triangle() {
+	var a, b int = 3, 4
 
 	fmt.Println(calcTriangle(a, b))
 }
 
-func calcTriangle(a,b int) int {
+func calcTriangle(a, b int) int {
 	var c int
 
 	c = int(math.Sqrt(float64(a*a + b*b)))

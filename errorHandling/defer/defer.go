@@ -1,11 +1,11 @@
 package main
 
 import (
+	"bufio"
+	"errors"
 	"fmt"
 	"os"
-	"bufio"
 	"selfLearning/functional/Fib"
-	"errors"
 )
 
 /*
@@ -28,14 +28,14 @@ import (
 //	}
 //}
 
-func writeFile(filename string){
+func writeFile(filename string) {
 	file, err := os.OpenFile(
-		filename, os.O_EXCL | os.O_CREATE, 0666)
+		filename, os.O_EXCL|os.O_CREATE, 0666)
 
 	err = errors.New("this is a custom error")
 	if err != nil {
 		//panic(err)
-		if pathError, ok := err.(*os.PathError); !ok{
+		if pathError, ok := err.(*os.PathError); !ok {
 			panic(err)
 		} else {
 			fmt.Printf("%s, %s, %s\n", pathError.Op,
@@ -52,7 +52,7 @@ func writeFile(filename string){
 
 	defer writer.Flush() //资源管理 close的时候，将操作完成，并结束，在defer 是计算
 	f := Fib.Fibonacci()
-	for i:= 0; i < 20; i++{
+	for i := 0; i < 20; i++ {
 		fmt.Fprintln(writer, f())
 	}
 

@@ -1,9 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 	"net/http/httputil"
-	"fmt"
 )
 
 func main() {
@@ -15,13 +15,13 @@ func main() {
 		CheckRedirect: func(
 			req *http.Request,
 			via []*http.Request) error {
-				fmt.Println("Redirect :" , req)
-				return nil
+			fmt.Println("Redirect :", req)
+			return nil
 		},
 	}
 	resp, err := client.Do(request)
 
-	if err != nil{
+	if err != nil {
 		panic(err)
 	}
 	defer resp.Body.Close()

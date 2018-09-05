@@ -1,14 +1,14 @@
 package main
 
 import (
-	"io"
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"strings"
 )
 
-func main(){
+func main() {
 	printFile("abc.txt")
 
 	s := `abc"d"
@@ -20,8 +20,8 @@ func main(){
 	printFileContents(strings.NewReader(s))
 }
 
-func printFile(filename string){
-	file,err := os.Open(filename)
+func printFile(filename string) {
+	file, err := os.Open(filename)
 	if err != nil {
 		panic(err)
 	}
@@ -29,10 +29,10 @@ func printFile(filename string){
 	printFileContents(file)
 }
 
-func printFileContents(reader io.Reader){
+func printFileContents(reader io.Reader) {
 	scanner := bufio.NewScanner(reader)
 
-	for scanner.Scan(){
+	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
 }

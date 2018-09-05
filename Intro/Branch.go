@@ -32,7 +32,7 @@ func main() {
 		fmt.Printf("%s\n", contents)
 	}
 
-	result,err := eval(3, 4, "/")
+	result, err := eval(3, 4, "/")
 	if err != nil {
 		panic(err)
 	}

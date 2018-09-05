@@ -2,27 +2,27 @@ package main
 
 import (
 	"fmt"
-	"time"
 	"sync"
+	"time"
 )
 
 type atomicInt struct {
 	value int
-	lock sync.Mutex
+	lock  sync.Mutex
 }
 
-func (a * atomicInt) increment(){
+func (a *atomicInt) increment() {
 	fmt.Println("safe increment")
-	func () {
+	func() {
 		a.lock.Lock()
 		defer a.lock.Unlock()
 
 		a.value++
-	} ()
+	}()
 
 }
 
-func (a * atomicInt) get() int{
+func (a *atomicInt) get() int {
 	a.lock.Lock()
 	defer a.lock.Unlock()
 

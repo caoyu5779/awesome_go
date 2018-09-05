@@ -9,17 +9,17 @@ func chanDemo() {
 	//var c chan int // c == nil
 	var wg sync.WaitGroup // 系统提供的 库
 	var workers [10]worker
-	for i := 0; i<10; i++{
-		workers[i] = createWorker(i ,&wg)
+	for i := 0; i < 10; i++ {
+		workers[i] = createWorker(i, &wg)
 	}
 	wg.Add(20)
 
-	for i, worker := range workers{
-		worker.in <-'a'+i
+	for i, worker := range workers {
+		worker.in <- 'a' + i
 	}
 
-	for i, worker := range workers{
-		worker.in <-'A'+i
+	for i, worker := range workers {
+		worker.in <- 'A' + i
 	}
 	wg.Wait()
 
@@ -43,14 +43,14 @@ func doWorker(id int, w worker) {
 }
 
 type worker struct {
-	in chan int
+	in   chan int
 	done func()
 }
 
-func createWorker(id int, wg *sync.WaitGroup) worker{
+func createWorker(id int, wg *sync.WaitGroup) worker {
 	w := worker{
-		in : make(chan int),
-		done : func() {
+		in: make(chan int),
+		done: func() {
 			wg.Done()
 		},
 	}
