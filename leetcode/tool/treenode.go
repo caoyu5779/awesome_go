@@ -86,6 +86,7 @@ func PreIn2Tree(pre, in []int) *TreeNode {
 	res := &TreeNode{
 		Val:pre[0],
 	}
+
 	if len(in) == 1 {
 		return res
 	}
