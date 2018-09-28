@@ -1,7 +1,7 @@
 package Fib
 
 func fib(i int) int {
-	if i == 0 || i == 1{
+	if i == 0 || i == 1 {
 		return i
 	}
 

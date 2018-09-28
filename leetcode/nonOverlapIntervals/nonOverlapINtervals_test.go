@@ -1,9 +1,9 @@
 package nonOverlapIntervals
 
 import (
-	"testing"
-	"selfLearning/leetcode/tool"
 	"reflect"
+	"selfLearning/leetcode/tool"
+	"testing"
 )
 
 func TestNonOverlapIntervals(t *testing.T) {

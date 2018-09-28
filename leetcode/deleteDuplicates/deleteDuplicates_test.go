@@ -1,15 +1,15 @@
 package deleteDuplicates
 
 import (
-	"testing"
-	"selfLearning/leetcode/tool"
 	"reflect"
+	"selfLearning/leetcode/tool"
+	"testing"
 )
 
 func TestDeleteDuplicates(t *testing.T) {
 	t.Run("test delete duplicates", func(t *testing.T) {
-		nums := []int {1,1,2,2,3}
-		deletedNums := []int {1,2,3}
+		nums := []int{1, 1, 2, 2, 3}
+		deletedNums := []int{1, 2, 3}
 
 		got := DeleteDuplicates(tool.S2l(nums))
 

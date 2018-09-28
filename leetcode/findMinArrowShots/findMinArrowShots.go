@@ -14,7 +14,7 @@ func FindMinArrowShots(bs [][]int) int {
 	res := 0
 	end := bs[0][1]
 
-	for i:=1 ; i < size; i ++ {
+	for i := 1; i < size; i++ {
 		if bs[i][0] <= end {
 			continue
 		}
@@ -33,10 +33,10 @@ func (b balloons) Len() int {
 	return len(b)
 }
 
-func (b balloons) Less(i,j int) bool {
+func (b balloons) Less(i, j int) bool {
 	return b[i][1] < b[j][1]
 }
 
-func (b balloons) Swap(i,j int) {
-	b[i],b[j] = b[j],b[i]
+func (b balloons) Swap(i, j int) {
+	b[i], b[j] = b[j], b[i]
 }

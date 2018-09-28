@@ -15,7 +15,7 @@ func (s stringSlice) Less(i, j int) bool {
 	return len(s[i]) > len(s[j])
 }
 
-func (s stringSlice) Swap (i,j int) {
+func (s stringSlice) Swap(i, j int) {
 	s[i], s[j] = s[j], s[i]
 }
 
@@ -24,26 +24,24 @@ func isSub(s, sub string) bool {
 		return false
 	}
 
-	i,j := 0,0
+	i, j := 0, 0
 
 	for i < len(s) && j < len(sub) {
 		if s[i] == sub[j] {
-			j ++
+			j++
 		}
 		i++
 	}
 	return j == len(sub)
 }
 
-
-func FindLongestWord(s string ,d []string) string {
+func FindLongestWord(s string, d []string) string {
 	sort.Sort(stringSlice(d))
 	for i := range d {
-		if isSub(s,d[i]) {
+		if isSub(s, d[i]) {
 			return d[i]
 		}
 	}
 
 	return ""
 }
-

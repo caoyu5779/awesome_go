@@ -1,14 +1,14 @@
 package partition
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestPartition(t *testing.T) {
 	t.Run("test partition", func(t *testing.T) {
 		got := Partition("aab")
-		want := [][]string {
+		want := [][]string{
 			{"a", "a", "b"},
 			{"aa", "b"},
 		}

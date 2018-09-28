@@ -1,11 +1,11 @@
 package rebuildTraversal
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
-func TestBinaryTree(t *testing.T)  {
+func TestBinaryTree(t *testing.T) {
 	level := Node{
 		nil,
 		nil,

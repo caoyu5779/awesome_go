@@ -10,10 +10,10 @@ func SortColors(nums []int) []int {
 	temp := nums[0]
 	nums[0] = 1
 
-	i,j,k := 0,1, length -1
-	
+	i, j, k := 0, 1, length-1
+
 	for j <= k {
-		switch  {
+		switch {
 		case nums[j] < 1:
 			nums[i], nums[j] = nums[j], nums[i]
 			i++

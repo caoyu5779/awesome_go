@@ -1,18 +1,18 @@
 package combinationSum
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestCombinationSum(t *testing.T) {
-	t.Run("test combination sum" , func(t *testing.T) {
+	t.Run("test combination sum", func(t *testing.T) {
 		put := []int{2, 3, 6, 7}
 
 		got := CombinationSum(put, 7)
 
-		want := [][]int {
-			{2,2,3},
+		want := [][]int{
+			{2, 2, 3},
 			{7},
 		}
 

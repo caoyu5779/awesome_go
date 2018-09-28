@@ -3,7 +3,7 @@ package canPartition
 func CanPartition(nums []int) bool {
 	sum := 0
 
-	for _,n := range nums {
+	for _, n := range nums {
 		sum += n
 	}
 
@@ -20,7 +20,7 @@ func CanPartition(nums []int) bool {
 		dp[i] = make([]bool, sum+1)
 	}
 
-	for i := 0; i < n +1 ; i ++ {
+	for i := 0; i < n+1; i++ {
 		dp[i][0] = true
 	}
 
@@ -28,8 +28,8 @@ func CanPartition(nums []int) bool {
 		dp[0][j] = false
 	}
 
-	for i := 1; i < n +1; i ++ {
-		for j :=1 ; j < sum +1; j++ {
+	for i := 1; i < n+1; i++ {
+		for j := 1; j < sum+1; j++ {
 			dp[i][j] = dp[i-1][j]
 
 			if j >= nums[i-1] {

@@ -1,26 +1,26 @@
 package impl
 
 import (
+	"errors"
 	"github.com/gorilla/websocket"
 	"sync"
-	"errors"
 )
 
 type Connection struct {
-	wsConn *websocket.Conn
-	inChan chan []byte
-	outChan chan []byte
+	wsConn    *websocket.Conn
+	inChan    chan []byte
+	outChan   chan []byte
 	closeChan chan byte
 
-	mutex sync.Mutex
+	mutex    sync.Mutex
 	isClosed bool
 }
 
 func InitConnection(wsConn *websocket.Conn) (conn *Connection, err error) {
 	conn = &Connection{
-		wsConn: wsConn,
-		inChan:make(chan []byte, 1000),
-		outChan : make(chan []byte, 1000),
+		wsConn:    wsConn,
+		inChan:    make(chan []byte, 1000),
+		outChan:   make(chan []byte, 1000),
 		closeChan: make(chan byte, 1),
 	}
 	//启动读协程
@@ -34,7 +34,7 @@ func InitConnection(wsConn *websocket.Conn) (conn *Connection, err error) {
 
 func (conn *Connection) ReadMessage() (data []byte, err error) {
 	select {
-	case data = <- conn.inChan:
+	case data = <-conn.inChan:
 	case <-conn.closeChan:
 		err = errors.New("connection is closed")
 	}
@@ -59,7 +59,7 @@ func (conn *Connection) Close() {
 	conn.mutex.Lock()
 	if conn.isClosed {
 		close(conn.closeChan)
-		conn.isClosed  = true
+		conn.isClosed = true
 	}
 	conn.mutex.Unlock()
 }
@@ -68,7 +68,7 @@ func (conn *Connection) Close() {
 func (conn *Connection) readLoop() {
 	var (
 		data []byte
-		err error
+		err  error
 	)
 
 	for {
@@ -78,7 +78,7 @@ func (conn *Connection) readLoop() {
 		//阻塞在这里 等待inChan 有位置
 		select {
 		case conn.inChan <- data:
-		case <- conn.closeChan:
+		case <-conn.closeChan:
 			//closeChan 关闭的时候
 			goto ERR
 		}
@@ -91,11 +91,11 @@ ERR:
 func (conn *Connection) writeLoop() {
 	var (
 		data []byte
-		err error
+		err  error
 	)
 	for {
 		select {
-		case data = <- conn.outChan:
+		case data = <-conn.outChan:
 		case <-conn.closeChan:
 			goto ERR
 		}

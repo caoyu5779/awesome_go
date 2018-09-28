@@ -6,7 +6,7 @@ func numberOf1(i int64) int {
 
 	for flag != 0 {
 		if i&flag != 0 {
-			count +=1
+			count += 1
 		}
 		flag <<= 1
 	}

@@ -1,13 +1,13 @@
 package wiggleMaxLength
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestWiggleMaxLength(t *testing.T) {
 	t.Run("test wiggle max length", func(t *testing.T) {
-		nums := []int {1,7,4,9,2,5}
+		nums := []int{1, 7, 4, 9, 2, 5}
 
 		got := WiggleMaxLength(nums)
 

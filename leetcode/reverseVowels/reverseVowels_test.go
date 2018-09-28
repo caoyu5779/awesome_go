@@ -1,8 +1,8 @@
 package reverseVowels
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestReverseVowels(t *testing.T) {

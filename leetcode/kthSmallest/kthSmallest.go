@@ -7,11 +7,11 @@ type TreeNode = tool.TreeNode
 func KthSmallest(root *TreeNode, k int) int {
 	leftSize := getSize(root.Left)
 
-	switch  {
-	case k <= leftSize :
+	switch {
+	case k <= leftSize:
 		return KthSmallest(root.Left, k)
 	case leftSize+1 < k:
-		return KthSmallest(root.Right, k - leftSize - 1)
+		return KthSmallest(root.Right, k-leftSize-1)
 	default:
 		return root.Val
 	}

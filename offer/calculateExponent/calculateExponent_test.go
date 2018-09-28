@@ -1,13 +1,13 @@
 package calculateExponent
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
-func TestCalculateExponent(t *testing.T)  {
+func TestCalculateExponent(t *testing.T) {
 	t.Run("calculate exponent", func(t *testing.T) {
-		got,err := calculateExponent(10, -2)
+		got, err := calculateExponent(10, -2)
 		want := 0.01
 
 		if err != nil {

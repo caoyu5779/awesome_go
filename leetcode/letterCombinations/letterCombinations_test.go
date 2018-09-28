@@ -1,8 +1,8 @@
 package letterCombinations
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestLetterCombinations(t *testing.T) {
@@ -14,6 +14,6 @@ func TestLetterCombinations(t *testing.T) {
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got : %v, want : %v", got, want)
 		}
-		
+
 	})
 }

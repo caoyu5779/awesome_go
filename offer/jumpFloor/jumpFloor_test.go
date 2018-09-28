@@ -1,8 +1,8 @@
 package jumpFloor
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestJumpFloor(t *testing.T) {

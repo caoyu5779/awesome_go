@@ -11,11 +11,11 @@ func Permute(nums []int) [][]int {
 
 	var ans [][]int
 
-	makePermutation(0,n,nums,vector,taken,&ans)
+	makePermutation(0, n, nums, vector, taken, &ans)
 	return ans
 }
 
-func makePermutation(cur, n int,nums, vector []int, taken []bool, ans *[][]int)  {
+func makePermutation(cur, n int, nums, vector []int, taken []bool, ans *[][]int) {
 	if cur == n {
 		tmp := make([]int, n)
 		copy(tmp, vector)
@@ -25,7 +25,7 @@ func makePermutation(cur, n int,nums, vector []int, taken []bool, ans *[][]int) 
 		return
 	}
 
-	for i:= 0; i < n; i ++ {
+	for i := 0; i < n; i++ {
 		if !taken[i] {
 			taken[i] = true
 
@@ -36,5 +36,3 @@ func makePermutation(cur, n int,nums, vector []int, taken []bool, ans *[][]int) 
 		}
 	}
 }
-
-

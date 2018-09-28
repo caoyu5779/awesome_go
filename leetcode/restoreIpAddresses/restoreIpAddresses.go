@@ -31,11 +31,11 @@ func RestoreIpAddresses(s string) []string {
 			return
 		}
 
-		maxRemain := 3 * (3 - idx)//9 //6 //3
+		maxRemain := 3 * (3 - idx) //9 //6 //3
 		//1;9;++ begin 0
 		//4;10;++ begin 3
 		//7;11;++ begin 6
-		for end := begin +1 ; end <= n- (3-idx); end++ {
+		for end := begin + 1; end <= n-(3-idx); end++ {
 			//3+9=10<12 end = 3
 			//4+6=10<12 end = 6
 			//7+3=10<12 end = 9
@@ -66,12 +66,12 @@ func RestoreIpAddresses(s string) []string {
 		}
 	}
 
-	dfs(0,0)
+	dfs(0, 0)
 
 	return res
 }
 
-func isOk(s string) bool{
+func isOk(s string) bool {
 	if len(s) > 1 && s[0] == '0' {
 		return false
 	}
@@ -95,6 +95,6 @@ func isOk(s string) bool{
 	return false
 }
 
-func Ip(s []string) string{
+func Ip(s []string) string {
 	return fmt.Sprintf("%s.%s.%s.%s", s[0], s[1], s[2], s[3])
 }

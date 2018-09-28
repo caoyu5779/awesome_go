@@ -20,11 +20,11 @@ func PreorderTraversal(root *TreeNode) []int {
 			if cur.Right != nil {
 				cur = cur.Right
 			} else {
-				if len(rightStack) == 0{
+				if len(rightStack) == 0 {
 					break
 				}
-				cur = rightStack[len(rightStack) - 1]
-				rightStack = rightStack[:len(rightStack) - 1]
+				cur = rightStack[len(rightStack)-1]
+				rightStack = rightStack[:len(rightStack)-1]
 			}
 		}
 	}

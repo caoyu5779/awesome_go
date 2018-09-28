@@ -1,13 +1,13 @@
 package climbStairs
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestClimbStairs(t *testing.T) {
 	t.Run("test climb stairs", func(t *testing.T) {
-		got  := ClimbStairs(3)
+		got := ClimbStairs(3)
 
 		want := 3
 

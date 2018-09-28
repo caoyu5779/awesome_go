@@ -1,14 +1,14 @@
 package assignCookies
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestAssignCookies(t *testing.T) {
 	t.Run("test assign cookies", func(t *testing.T) {
-		nums := []int {1,2}
-		s := []int {1,2,3}
+		nums := []int{1, 2}
+		s := []int{1, 2, 3}
 
 		got := AssignCookies(nums, s)
 

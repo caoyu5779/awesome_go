@@ -1,8 +1,8 @@
 package sumRange
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestNumArray_SumRange(t *testing.T) {
@@ -10,7 +10,7 @@ func TestNumArray_SumRange(t *testing.T) {
 
 	na := Constructor(nums)
 
-	got := na.SumRange(2,5)
+	got := na.SumRange(2, 5)
 
 	want := -1
 

@@ -1,15 +1,15 @@
 package longestUnivaluePath
 
 import (
-	"testing"
-	"selfLearning/leetcode/tool"
 	"reflect"
+	"selfLearning/leetcode/tool"
+	"testing"
 )
 
 func TestLongestUnivaluePath(t *testing.T) {
 	t.Run("test longest univalue path", func(t *testing.T) {
-		pre := []int {5,4,1,1,5,5}
-		in := []int {1,4,1,5,5,5}
+		pre := []int{5, 4, 1, 1, 5, 5}
+		in := []int{1, 4, 1, 5, 5, 5}
 
 		got := LongestUnivaluePath(tool.PreIn2Tree(pre, in))
 

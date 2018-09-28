@@ -16,11 +16,11 @@ func transMidToRoot(begin, end *ListNode) *TreeNode {
 
 	if begin.Next == end {
 		return &TreeNode{
-			Val:begin.Val,
+			Val: begin.Val,
 		}
 	}
 
-	fast , slow := begin, begin
+	fast, slow := begin, begin
 
 	for fast != end && fast.Next != end {
 		fast = fast.Next.Next
@@ -30,8 +30,8 @@ func transMidToRoot(begin, end *ListNode) *TreeNode {
 	mid := slow
 
 	return &TreeNode{
-		Val :mid.Val,
-		Left : transMidToRoot(begin,mid),
-		Right : transMidToRoot(mid.Next, end),
+		Val:   mid.Val,
+		Left:  transMidToRoot(begin, mid),
+		Right: transMidToRoot(mid.Next, end),
 	}
 }

@@ -1,13 +1,13 @@
 package lengthOfLIS
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestLengthOfLIS(t *testing.T) {
 	t.Run("test length of lis", func(t *testing.T) {
-		nums := []int {10,9,2,5,3,7,101,18}
+		nums := []int{10, 9, 2, 5, 3, 7, 101, 18}
 
 		got := LengthOfLIS(nums)
 		want := 4

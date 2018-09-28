@@ -1,13 +1,13 @@
 package maxAreaOfIsland
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestMaxAreaOfIsland(t *testing.T) {
 	t.Run("test max area of island", func(t *testing.T) {
-		grid := [][]int {
+		grid := [][]int{
 			{1, 1, 0, 0, 0},
 			{1, 1, 0, 0, 0},
 			{0, 0, 0, 1, 1},

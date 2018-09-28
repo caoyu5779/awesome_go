@@ -1,8 +1,8 @@
 package parser
 
 import (
-	"selfLearning/crawler/engine"
 	"regexp"
+	"selfLearning/crawler/engine"
 )
 
 const cityListRe = `<a href="(http://www.zhenai.com/zhenghun/[0-9a-zA-Z]+)"[^>]*>([^<]+)</a>`
@@ -14,10 +14,10 @@ func ParseCityList(contents []byte) engine.ParseResult {
 	result := engine.ParseResult{}
 	for _, m := range matches {
 		result.Items = append(
-			result.Items, "City " + string(m[2]))
+			result.Items, "City "+string(m[2]))
 		result.Requests = append(
 			result.Requests, engine.Request{
-				Url : string(m[1]),
+				Url:        string(m[1]),
 				ParserFunc: ParseCity,
 			})
 	}

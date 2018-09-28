@@ -1,8 +1,8 @@
 package numSquares
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestNumSquares(t *testing.T) {

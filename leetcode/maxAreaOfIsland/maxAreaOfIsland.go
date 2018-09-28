@@ -15,7 +15,7 @@ func MaxAreaOfIsland(grid [][]int) int {
 	return maxArea
 }
 
-func getArea(grid [][]int, i , j int) int {
+func getArea(grid [][]int, i, j int) int {
 	if grid[i][j] == 0 {
 		return 0
 	}
@@ -31,17 +31,16 @@ func getArea(grid [][]int, i , j int) int {
 		area += getArea(grid, i, j-1)
 	}
 
-	if i != len(grid) - 1{
+	if i != len(grid)-1 {
 		area += getArea(grid, i+1, j)
 	}
 
-	if j != len(grid[0]) - 1{
+	if j != len(grid[0])-1 {
 		area += getArea(grid, i, j+1)
 	}
 	fmt.Println(i)
 	fmt.Println(len(grid) - 1)
 	fmt.Println()
-
 
 	return area
 }
@@ -53,4 +52,3 @@ func max(a, b int) int {
 
 	return b
 }
-

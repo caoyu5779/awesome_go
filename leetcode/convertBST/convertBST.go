@@ -10,7 +10,7 @@ func ConvertBST(root *TreeNode) *TreeNode {
 	return root
 }
 
-func travel(root *TreeNode, sum *int)  {
+func travel(root *TreeNode, sum *int) {
 	if root == nil {
 		return
 	}

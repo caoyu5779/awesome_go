@@ -1,11 +1,11 @@
 package cutTheRope
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
-func TestCutTheRope(t *testing.T)  {
+func TestCutTheRope(t *testing.T) {
 	t.Run("cut the rope", func(t *testing.T) {
 		got := cutTheRope(10)
 		want := 36

@@ -3,15 +3,15 @@ package sortCharactersByFrequency
 import "sort"
 
 func SortCharactersByFrequency(s string) string {
-	r := ['z'+1]int {}
+	r := ['z' + 1]int{}
 
-	for i:= range s {
+	for i := range s {
 		r[s[i]]++
 	}
 
-	ss := make([]string, 0 ,len(s))
+	ss := make([]string, 0, len(s))
 
-	for i:= range r {
+	for i := range r {
 		if r[i] == 0 {
 			continue
 		}
@@ -22,14 +22,14 @@ func SortCharactersByFrequency(s string) string {
 
 	res := ""
 
-	for _,s := range ss {
+	for _, s := range ss {
 		res += s
 	}
 
 	return res
 }
 
-func makeString(b byte, n int) string  {
+func makeString(b byte, n int) string {
 	bytes := make([]byte, n)
 
 	for i := range bytes {
@@ -40,11 +40,11 @@ func makeString(b byte, n int) string  {
 
 type segments []string
 
-func (s segments) Len() int  {
+func (s segments) Len() int {
 	return len(s)
 }
 
-func (s segments) Less(i,j int) bool  {
+func (s segments) Less(i, j int) bool {
 	if len(s[i]) == len(s[j]) {
 		return s[i] < s[j]
 	}
@@ -53,5 +53,5 @@ func (s segments) Less(i,j int) bool  {
 }
 
 func (s segments) Swap(i, j int) {
-	s[i],s[j] = s[j], s[i]
+	s[i], s[j] = s[j], s[i]
 }

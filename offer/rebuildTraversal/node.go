@@ -1,12 +1,12 @@
 package rebuildTraversal
 
 type Node struct {
-	left *Node
+	left  *Node
 	right *Node
 	value int
 }
 
-func (node *Node) PreOrderTraversal (result []int) []int {
+func (node *Node) PreOrderTraversal(result []int) []int {
 	if node != nil {
 		result = append(result, node.value)
 	}
@@ -22,12 +22,12 @@ func (node *Node) PreOrderTraversal (result []int) []int {
 	return result
 }
 
-func (node *Node) InOrderTraversal (result []int) []int {
+func (node *Node) InOrderTraversal(result []int) []int {
 	if node.left != nil {
 		result = node.left.PreOrderTraversal(result)
 	}
 
-	if node != nil{
+	if node != nil {
 		result = append(result, node.value)
 	}
 
@@ -38,7 +38,7 @@ func (node *Node) InOrderTraversal (result []int) []int {
 	return result
 }
 
-func (node *Node) BreathFirstTraversal (result []int) []int {
+func (node *Node) BreathFirstTraversal(result []int) []int {
 	queue := []*Node{node}
 	var n *Node
 

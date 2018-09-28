@@ -1,8 +1,8 @@
 package diffWaysToCompute
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestDiffWaysToCompute(t *testing.T) {
@@ -10,10 +10,10 @@ func TestDiffWaysToCompute(t *testing.T) {
 		s := "2+2+2+2"
 
 		got := DiffWaysToCompute(s)
-		want := []int{8,8,8,8,8}
+		want := []int{8, 8, 8, 8, 8}
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got : %v; want : %v", got,want)
+			t.Errorf("got : %v; want : %v", got, want)
 		}
 	})
 }

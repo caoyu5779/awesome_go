@@ -24,11 +24,11 @@ func PathSum(root *TreeNode, sum int) int {
 			cnt++
 		}
 
-		dfs (node.Left, sum)
-		dfs (node.Right, sum)
+		dfs(node.Left, sum)
+		dfs(node.Right, sum)
 	}
 
-	dfs (root, sum)
+	dfs(root, sum)
 
 	return cnt + PathSum(root.Left, sum) + PathSum(root.Right, sum)
 }

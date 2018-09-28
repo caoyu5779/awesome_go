@@ -3,13 +3,13 @@ package combine
 import "fmt"
 
 func Combine(n int, k int) [][]int {
-	combination := make ([]int, k)
+	combination := make([]int, k)
 	res := [][]int{}
 
 	var dfs func(int, int)
 	dfs = func(idx int, begin int) {
 		if idx == k {
-			temp := make([]int , k)
+			temp := make([]int, k)
 			copy(temp, combination)
 			fmt.Println(temp)
 			res = append(res, temp)
@@ -27,10 +27,10 @@ func Combine(n int, k int) [][]int {
 			//combination[0]=1
 			//combination[1]=2
 			//dfs(2,3)
-			dfs (idx+1, i+1)
+			dfs(idx+1, i+1)
 		}
 	}
 
-	dfs (0, 1)
+	dfs(0, 1)
 	return res
 }

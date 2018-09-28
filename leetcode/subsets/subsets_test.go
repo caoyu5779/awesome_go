@@ -1,13 +1,13 @@
 package subsets
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestSubsets(t *testing.T) {
 	t.Run("test subsets", func(t *testing.T) {
-		para := []int{1,2,3}
+		para := []int{1, 2, 3}
 
 		got := Subsets(para)
 

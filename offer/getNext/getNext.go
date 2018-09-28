@@ -1,5 +1,5 @@
 package getNext
 
-func (node *Node) getNext (next int)  {
+func (node *Node) getNext(next int) {
 
 }

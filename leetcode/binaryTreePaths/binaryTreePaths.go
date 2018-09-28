@@ -7,9 +7,9 @@ import (
 
 type TreeNode = tool.TreeNode
 
-func BinaryTreePaths(root *TreeNode) []string  {
+func BinaryTreePaths(root *TreeNode) []string {
 
-	if root == nil{
+	if root == nil {
 		return nil
 	}
 
@@ -20,11 +20,11 @@ func BinaryTreePaths(root *TreeNode) []string  {
 	dfs = func(pre string, root *TreeNode) {
 		if pre == "" {
 			pre = strconv.Itoa(root.Val)
-		}	else {
+		} else {
 			pre += "->" + strconv.Itoa(root.Val)
 		}
 
-		if  root.Left != nil {
+		if root.Left != nil {
 			dfs(pre, root.Left)
 		}
 

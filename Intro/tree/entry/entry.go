@@ -48,8 +48,8 @@ func main() {
 
 	c := root.TraverseWithChannel()
 	maxNode := 0
-	for node := range c{
-		if node.Value > maxNode{
+	for node := range c {
+		if node.Value > maxNode {
 			maxNode = node.Value
 		}
 	}

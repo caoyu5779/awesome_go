@@ -1,9 +1,9 @@
 package ladderLength
 
-func LadderLength(beginWord string, endWord string, words []string) int{
+func LadderLength(beginWord string, endWord string, words []string) int {
 	dict := make(map[string]bool, len(words))
 
-	for i:=0; i < len(words); i++ {
+	for i := 0; i < len(words); i++ {
 		dict[words[i]] = true
 	}
 
@@ -15,13 +15,13 @@ func LadderLength(beginWord string, endWord string, words []string) int{
 
 	trans = func(word string) bool {
 		//将字符串转为byte
-		bytes := [] byte(word)
+		bytes := []byte(word)
 
-		for i := 0; i < len(bytes); i ++ {
+		for i := 0; i < len(bytes); i++ {
 			//每个字幕都比较
 			diffLetter := bytes[i]
 			// 26个字幕逐一比较
-			for j :=0; j < 26; j ++ {
+			for j := 0; j < 26; j++ {
 				b := 'a' + byte(j)
 				//相同就跳出
 				if b == diffLetter {
@@ -52,7 +52,7 @@ func LadderLength(beginWord string, endWord string, words []string) int{
 	for len(queue) > 0 {
 		qLen := len(queue)
 		//逻辑从这里开始
-		for i := 0; i < qLen ; i++ {
+		for i := 0; i < qLen; i++ {
 			word := queue[0]
 			queue = queue[1:]
 			//调用的函数

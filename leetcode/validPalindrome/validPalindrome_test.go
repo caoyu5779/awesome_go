@@ -1,8 +1,8 @@
 package validPalindrome
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestValidPalindrome(t *testing.T) {

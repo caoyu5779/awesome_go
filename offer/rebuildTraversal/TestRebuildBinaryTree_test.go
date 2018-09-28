@@ -1,29 +1,29 @@
 package rebuildTraversal
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
-func TestRebuildBinaryTree(t *testing.T)  {
-	preOrderTraversal := []int{0,1,2}
-	inOrderTraversal := []int{1,0,2}
+func TestRebuildBinaryTree(t *testing.T) {
+	preOrderTraversal := []int{0, 1, 2}
+	inOrderTraversal := []int{1, 0, 2}
 
 	got := RebuildBinaryTree(preOrderTraversal, inOrderTraversal)
 
-	left := Node {
+	left := Node{
 		nil,
 		nil,
 		1,
 	}
 
-	right := Node {
+	right := Node{
 		nil,
 		nil,
 		2,
 	}
 
-	root := Node {
+	root := Node{
 		&left,
 		&right,
 		0,
@@ -31,12 +31,12 @@ func TestRebuildBinaryTree(t *testing.T)  {
 
 	want := &root
 
-	if !TreeEqual(got, want){
+	if !TreeEqual(got, want) {
 		t.Errorf("got : %v want : %v", got, want)
 	}
 }
 
-func TreeEqual(node1 * Node, node2 *Node) (equality bool) {
+func TreeEqual(node1 *Node, node2 *Node) (equality bool) {
 	var result1 []int
 	var result2 []int
 

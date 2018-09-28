@@ -1,17 +1,17 @@
 package splitListToParts
 
 import (
-	"testing"
-	"selfLearning/leetcode/tool"
 	"reflect"
+	"selfLearning/leetcode/tool"
+	"testing"
 )
 
 func TestSplitListToParts(t *testing.T) {
 	t.Run("test split list to parts", func(t *testing.T) {
-		root := []int {1,2,3}
+		root := []int{1, 2, 3}
 
 		got := SplitListToParts(tool.S2l(root), 5)
-		want := []*ListNode {
+		want := []*ListNode{
 			tool.S2l([]int{1}),
 			tool.S2l([]int{2}),
 			tool.S2l([]int{3}),

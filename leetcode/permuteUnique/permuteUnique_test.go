@@ -1,13 +1,13 @@
 package permuteUnique
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestPermuteUnique(t *testing.T) {
 	t.Run("test permute unique", func(t *testing.T) {
-		nums := []int {1,2,3}
+		nums := []int{1, 2, 3}
 
 		got := PermuteUnique(nums)
 

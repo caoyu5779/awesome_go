@@ -1,11 +1,12 @@
 package oddEvenList
 
 import (
-	"selfLearning/leetcode/tool"
 	"fmt"
+	"selfLearning/leetcode/tool"
 )
 
 type ListNode = tool.ListNode
+
 func OddEvenList(head *ListNode) *ListNode {
 	if head == nil {
 		return head

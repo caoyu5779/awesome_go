@@ -5,7 +5,7 @@ import "selfLearning/leetcode/tool"
 type TreeNode = tool.TreeNode
 
 func AverageOfLevels(root *TreeNode) []float64 {
-	res := make([]float64, 0 , 128)
+	res := make([]float64, 0, 128)
 
 	nodes := make([]*TreeNode, 1, 1024)
 	nodes[0] = root
@@ -15,7 +15,7 @@ func AverageOfLevels(root *TreeNode) []float64 {
 
 		sum := 0
 
-		for i:=0;i<n;i++ {
+		for i := 0; i < n; i++ {
 			sum += nodes[i].Val
 			if nodes[i].Left != nil {
 				nodes = append(nodes, nodes[i].Left)
@@ -26,7 +26,7 @@ func AverageOfLevels(root *TreeNode) []float64 {
 			}
 		}
 
-		res = append(res, float64(sum) / float64(n))
+		res = append(res, float64(sum)/float64(n))
 		nodes = nodes[n:]
 	}
 

@@ -1,15 +1,15 @@
 package oddEvenList
 
 import (
-	"testing"
-	"selfLearning/leetcode/tool"
 	"reflect"
+	"selfLearning/leetcode/tool"
+	"testing"
 )
 
 func TestOddEvenList(t *testing.T) {
 	t.Run("test odd even list", func(t *testing.T) {
-		nums := []int {1,2,3,4,5}
-		oddNums := []int {1,3,5,2,4}
+		nums := []int{1, 2, 3, 4, 5}
+		oddNums := []int{1, 3, 5, 2, 4}
 
 		got := OddEvenList(tool.S2l(nums))
 

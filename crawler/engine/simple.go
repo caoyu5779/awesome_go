@@ -1,17 +1,17 @@
 package engine
 
 import (
-	"selfLearning/crawler/fetcher"
 	"log"
+	"selfLearning/crawler/fetcher"
 )
 
 type SimpleEngine struct {
-
 }
-func (e SimpleEngine) Run(seeds ...Request){
+
+func (e SimpleEngine) Run(seeds ...Request) {
 	var requests []Request
-	
-	for _,r := range seeds{
+
+	for _, r := range seeds {
 		requests = append(requests, r)
 	}
 
@@ -26,7 +26,7 @@ func (e SimpleEngine) Run(seeds ...Request){
 
 		requests = append(requests, parseResult.Requests...)
 
-		for _,item := range parseResult.Items{
+		for _, item := range parseResult.Items {
 			log.Printf("Got item %v", item)
 		}
 	}
@@ -37,7 +37,7 @@ func Worker(r Request) (ParseResult, error) {
 
 	body, err := fetcher.Fetch(r.Url)
 	if err != nil {
-		log.Printf("Fetcher : error " + "fetching url %s : %v", r.Url, err)
+		log.Printf("Fetcher : error "+"fetching url %s : %v", r.Url, err)
 		return ParseResult{}, err
 	}
 

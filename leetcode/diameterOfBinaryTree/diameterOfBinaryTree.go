@@ -1,8 +1,8 @@
 package diameterOfBinaryTree
 
 import (
-	"selfLearning/leetcode/tool"
 	"fmt"
+	"selfLearning/leetcode/tool"
 )
 
 type TreeNode = tool.TreeNode
@@ -13,12 +13,12 @@ func DiameterOfBinaryTree(root *TreeNode) int {
 	return res
 }
 
-func helper(root * TreeNode) (length, diameter int) {
+func helper(root *TreeNode) (length, diameter int) {
 	if root == nil {
 		return
 	}
 
-	leftLen , leftDia := helper(root.Left)
+	leftLen, leftDia := helper(root.Left)
 	rightLen, rightDia := helper(root.Right)
 
 	length = tool.Max(leftLen, rightLen) + 1

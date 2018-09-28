@@ -1,12 +1,12 @@
 package numberOfArithmeticSlices
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestNumberOfArithmeticSlice(t *testing.T) {
-	a := []int {1, 2, 3, 4}
+	a := []int{1, 2, 3, 4}
 
 	got := NumberOfArithmeticSlice(a)
 	//
@@ -20,6 +20,5 @@ func TestNumberOfArithmeticSlice(t *testing.T) {
 	if !reflect.DeepEqual(got, want) {
 		t.Errorf("got : %v ; want : %v", got, want)
 	}
-
 
 }

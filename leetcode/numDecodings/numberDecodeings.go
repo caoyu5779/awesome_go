@@ -9,13 +9,13 @@ func NumDecodings(s string) int {
 	dp := make([]int, n+1)
 	dp[0], dp[1] = 1, one(s[0:1])
 
-	for i:=2; i<=n;i++ {
-		w1,w2 := one(s[i-1:i]), two(s[i-2:i])
+	for i := 2; i <= n; i++ {
+		w1, w2 := one(s[i-1:i]), two(s[i-2:i])
 
 		//dp[2] = dp[1]*1+dp[0]*1 = 2
-		dp[i] = dp[i-1] * w1 + dp[i-2] * w2
+		dp[i] = dp[i-1]*w1 + dp[i-2]*w2
 
-		if dp[i] == 0{
+		if dp[i] == 0 {
 			return 0
 		}
 	}
@@ -43,7 +43,7 @@ func one(s string) int {
 	合格返回1
 	不合格 返回0
 	NOTICE : GO 强语言类型
- */
+*/
 func two(s string) int {
 	switch s[0] {
 	case '1':

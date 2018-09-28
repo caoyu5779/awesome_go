@@ -3,14 +3,14 @@ package tool
 import "fmt"
 
 type TreeNode struct {
-	Val int
-	Left *TreeNode
+	Val   int
+	Left  *TreeNode
 	Right *TreeNode
 }
 
-var NULL = -1 <<63
+var NULL = -1 << 63
 
-func Ints2TreeNode(ints []int) *TreeNode  {
+func Ints2TreeNode(ints []int) *TreeNode {
 	n := len(ints)
 
 	if n == 0 {
@@ -18,7 +18,7 @@ func Ints2TreeNode(ints []int) *TreeNode  {
 	}
 
 	root := &TreeNode{
-		Val : ints[0],
+		Val: ints[0],
 	}
 
 	queue := make([]*TreeNode, 1, n*2)
@@ -31,14 +31,14 @@ func Ints2TreeNode(ints []int) *TreeNode  {
 		queue = queue[1:]
 
 		if i < n && ints[i] != NULL {
-			node.Left = &TreeNode{Val:ints[i]}
+			node.Left = &TreeNode{Val: ints[i]}
 			queue = append(queue, node.Left)
 		}
 
 		i++
 
 		if i < n && ints[i] != NULL {
-			node.Right = &TreeNode{Val:ints[i]}
+			node.Right = &TreeNode{Val: ints[i]}
 			queue = append(queue, node.Right)
 		}
 
@@ -48,7 +48,7 @@ func Ints2TreeNode(ints []int) *TreeNode  {
 	return root
 }
 
-func GetTargetNode(root * TreeNode, target int) * TreeNode {
+func GetTargetNode(root *TreeNode, target int) *TreeNode {
 	if root == nil || root.Val == target {
 		return root
 	}
@@ -64,7 +64,7 @@ func GetTargetNode(root * TreeNode, target int) * TreeNode {
 
 func indexOf(val int, nums []int) int {
 	for i, v := range nums {
-		if v == val{
+		if v == val {
 			return i
 		}
 	}
@@ -73,6 +73,7 @@ func indexOf(val int, nums []int) int {
 
 	panic(msg)
 }
+
 //把preorder 和 inorder 转换为二叉树 前序
 func PreIn2Tree(pre, in []int) *TreeNode {
 	if len(pre) != len(in) {
@@ -84,14 +85,14 @@ func PreIn2Tree(pre, in []int) *TreeNode {
 	}
 
 	res := &TreeNode{
-		Val:pre[0],
+		Val: pre[0],
 	}
 
 	if len(in) == 1 {
 		return res
 	}
 
-	idx := indexOf(res.Val,in)
+	idx := indexOf(res.Val, in)
 
 	res.Left = PreIn2Tree(pre[1:idx+1], in[:idx])
 	res.Right = PreIn2Tree(pre[idx+1:], in[idx+1:])
@@ -100,42 +101,42 @@ func PreIn2Tree(pre, in []int) *TreeNode {
 }
 
 //中序
-func InPost2Tree(in,post []int) *TreeNode  {
+func InPost2Tree(in, post []int) *TreeNode {
 	if len(post) != len(in) {
 		panic("in post 2 tree 两个切片长度不同")
 	}
 
-	if len(in) == 0{
+	if len(in) == 0 {
 		return nil
 	}
 
 	res := &TreeNode{
-		Val:post[len(post) - 1],
+		Val: post[len(post)-1],
 	}
 
-	if len(in) == 1{
+	if len(in) == 1 {
 		return res
 	}
 
 	idx := indexOf(res.Val, in)
 
 	res.Left = InPost2Tree(in[:idx], post[:idx])
-	res.Right = InPost2Tree(in[idx+1:], post[idx:len(post) - 1])
+	res.Right = InPost2Tree(in[idx+1:], post[idx:len(post)-1])
 
 	return res
 }
 
 //Tree2PreOrder 二叉树转成 preorder 切片
 func Tree2PreOrder(root *TreeNode) []int {
-	if root == nil{
+	if root == nil {
 		return nil
 	}
 
 	if root.Left == nil && root.Right == nil {
-		return []int {root.Val}
+		return []int{root.Val}
 	}
 
-	res := []int {root.Val}
+	res := []int{root.Val}
 
 	res = append(res, Tree2PreOrder(root.Left)...)
 	res = append(res, Tree2PreOrder(root.Right)...)
@@ -151,7 +152,7 @@ func Tree2Inorder(root *TreeNode) []int {
 	}
 
 	if root.Left == nil && root.Right == nil {
-		return []int {root.Val}
+		return []int{root.Val}
 	}
 
 	res := Tree2Inorder(root.Left)
@@ -169,7 +170,7 @@ func Tree2PostOrder(root *TreeNode) []int {
 	}
 
 	if root.Left == nil && root.Right == nil {
-		return []int {root.Val}
+		return []int{root.Val}
 	}
 
 	res := Tree2PostOrder(root.Left)
@@ -181,7 +182,7 @@ func Tree2PostOrder(root *TreeNode) []int {
 }
 
 //equal return true if tn == a
-func (tn *TreeNode) Equal (a *TreeNode) bool  {
+func (tn *TreeNode) Equal(a *TreeNode) bool {
 	if tn == nil && a == nil {
 		return true
 	}
@@ -202,7 +203,7 @@ func Tree2ints(tn *TreeNode) []int {
 	for len(queue) > 0 {
 		size := len(queue)
 
-		for i := 0 ; i< size; i ++ {
+		for i := 0; i < size; i++ {
 			nd := queue[i]
 			if nd == nil {
 				res = append(res, NULL)

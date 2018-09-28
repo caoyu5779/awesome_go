@@ -5,7 +5,7 @@ func BinarySearch(nums []int, key int) int {
 	end := len(nums) - 1
 
 	for start <= end {
-		mid := (start + (end -1)) /2
+		mid := (start + (end - 1)) / 2
 		if nums[mid] == key {
 			return mid
 		} else if nums[mid] > key {

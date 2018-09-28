@@ -1,9 +1,9 @@
 package partitionLabels
 
-func PartitionLabels(S string) []int  {
-	maxIndex :=[26]int{}
+func PartitionLabels(S string) []int {
+	maxIndex := [26]int{}
 
-	for i,b := range S {
+	for i, b := range S {
 		maxIndex[b-'a'] = i
 	}
 
@@ -12,22 +12,22 @@ func PartitionLabels(S string) []int  {
 
 	res := make([]int, 0, len(S))
 
-	for i,b := range S {
+	for i, b := range S {
 		if i < end {
-			end = max (end,maxIndex[b-'a'])
+			end = max(end, maxIndex[b-'a'])
 			continue
 		}
 		res = append(res, i-begin+1)
 		begin = i + 1
 		if begin < len(S) {
-			end = maxIndex[S[begin] - 'a']
+			end = maxIndex[S[begin]-'a']
 		}
 	}
 
 	return res
 }
 
-func max(a,b int) int {
+func max(a, b int) int {
 	if a > b {
 		return a
 	}

@@ -4,8 +4,8 @@ import "selfLearning/leetcode/tool"
 
 type TreeNode = tool.TreeNode
 
-func InvertTree(root * TreeNode) * TreeNode {
-	if root == nil || (root.Left == nil && root.Right == nil){
+func InvertTree(root *TreeNode) *TreeNode {
+	if root == nil || (root.Left == nil && root.Right == nil) {
 		return root
 	}
 

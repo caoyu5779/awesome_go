@@ -2,7 +2,7 @@ package permuteUnique
 
 import "sort"
 
-func PermuteUnique(nums []int) [][]int  {
+func PermuteUnique(nums []int) [][]int {
 	sort.Ints(nums)
 
 	n := len(nums)
@@ -11,23 +11,23 @@ func PermuteUnique(nums []int) [][]int  {
 	taken := make([]bool, n)
 	var ans [][]int
 
-	makePermutation(0, n,nums, vector, taken, &ans)
+	makePermutation(0, n, nums, vector, taken, &ans)
 
 	return ans
 
 }
 
-func makePermutation(cur, n int , nums, vector []int, taken []bool, ans * [][]int )  {
+func makePermutation(cur, n int, nums, vector []int, taken []bool, ans *[][]int) {
 	if cur == n {
 		tmp := make([]int, n)
 
-		copy (tmp, vector)
+		copy(tmp, vector)
 		*ans = append(*ans, tmp)
 		return
 	}
 
-	used := make(map[int]bool, n - cur)
-	for i :=0 ; i < n ; i ++ {
+	used := make(map[int]bool, n-cur)
+	for i := 0; i < n; i++ {
 		if !taken[i] && !used[nums[i]] {
 			used[nums[i]] = true
 			taken[i] = true

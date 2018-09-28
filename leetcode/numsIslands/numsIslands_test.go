@@ -1,8 +1,8 @@
 package numsIslands
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestNumIslands(t *testing.T) {

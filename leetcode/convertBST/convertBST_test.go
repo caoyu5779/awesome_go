@@ -1,18 +1,18 @@
 package convertBST
 
 import (
-	"testing"
-	"selfLearning/leetcode/tool"
 	"reflect"
+	"selfLearning/leetcode/tool"
+	"testing"
 )
 
 func TestConvertBST(t *testing.T) {
 	t.Run("test convert bst", func(t *testing.T) {
-		in := []int {2,5,13}
-		pre := []int {5,2,13}
+		in := []int{2, 5, 13}
+		pre := []int{5, 2, 13}
 
-		in1 := []int {20,18,13}
-		pre1 := []int {18,20,13}
+		in1 := []int{20, 18, 13}
+		pre1 := []int{18, 20, 13}
 
 		got := ConvertBST(tool.PreIn2Tree(pre, in))
 

@@ -1,8 +1,8 @@
 package numDecodings
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestNumDecodings(t *testing.T) {

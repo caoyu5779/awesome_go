@@ -1,15 +1,15 @@
 package swapPairs
 
 import (
-	"testing"
-	"selfLearning/leetcode/tool"
 	"reflect"
+	"selfLearning/leetcode/tool"
+	"testing"
 )
 
 func TestSwapPairs(t *testing.T) {
 	t.Run("test swap pairs", func(t *testing.T) {
-		nums := []int {1,2,3,4}
-		swapNums := []int {2,1,4,3}
+		nums := []int{1, 2, 3, 4}
+		swapNums := []int{2, 1, 4, 3}
 
 		got := SwapPairs(tool.S2l(nums))
 

@@ -15,10 +15,10 @@ func FindLongestChain(pairs [][]int) int {
 
 	b := -1 << 32
 
-	for i := 0; i < len(pairs); i ++ {
+	for i := 0; i < len(pairs); i++ {
 		c := pairs[i][0]
 		if b < c {
-			res ++
+			res++
 			b = pairs[i][1]
 		}
 	}

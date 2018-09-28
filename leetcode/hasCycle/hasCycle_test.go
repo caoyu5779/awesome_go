@@ -1,8 +1,8 @@
 package hasCycle
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestHasCycle(t *testing.T) {
@@ -30,7 +30,7 @@ func TestHasCycle(t *testing.T) {
 		got := HasCycle(node4)
 		want := true
 
-		if !reflect.DeepEqual(got, want){
+		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got : %v , want : %v", got, want)
 		}
 

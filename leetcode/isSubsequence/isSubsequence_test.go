@@ -1,8 +1,8 @@
 package isSubsequence
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestIsSubsequence(t *testing.T) {

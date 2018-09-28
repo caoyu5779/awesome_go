@@ -3,7 +3,7 @@ package hasCycle
 import "fmt"
 
 type Node struct {
-	Next *Node
+	Next  *Node
 	Value interface{}
 }
 
@@ -12,7 +12,7 @@ func HasCycle(node *Node) bool {
 
 	visited := make(map[*Node]bool)
 
-	for n := first; n != nil ; n = n.Next {
+	for n := first; n != nil; n = n.Next {
 		if visited[n] {
 			fmt.Println("cycle detected")
 			return true

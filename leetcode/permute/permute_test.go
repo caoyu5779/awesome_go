@@ -1,17 +1,17 @@
 package permute
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestPermute(t *testing.T) {
 	t.Run("test permute", func(t *testing.T) {
-		nums := []int{1,2,3}
+		nums := []int{1, 2, 3}
 
 		got := Permute(nums)
 
-		want := [][]int {
+		want := [][]int{
 			{1, 2, 3},
 			{1, 3, 2},
 			{2, 1, 3},

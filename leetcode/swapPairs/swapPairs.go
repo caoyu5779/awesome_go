@@ -2,7 +2,7 @@ package swapPairs
 
 import "selfLearning/leetcode/tool"
 
-func SwapPairs(head *tool.ListNode) *tool.ListNode  {
+func SwapPairs(head *tool.ListNode) *tool.ListNode {
 	if head == nil || head.Next == nil {
 		return head
 	}

@@ -1,8 +1,8 @@
 package permutationNum
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestPermutationNum(t *testing.T) {

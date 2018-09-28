@@ -1,12 +1,12 @@
 package removeNthFromEnd
 
 import (
-	"selfLearning/leetcode/tool"
 	"fmt"
+	"selfLearning/leetcode/tool"
 )
 
 func RemoveNthFromEnd(head *tool.ListNode, n int) *tool.ListNode {
-	d,headIsNthFromEnd := getParentNode(head, n)
+	d, headIsNthFromEnd := getParentNode(head, n)
 
 	if headIsNthFromEnd {
 		return head.Next
@@ -16,7 +16,7 @@ func RemoveNthFromEnd(head *tool.ListNode, n int) *tool.ListNode {
 	return head
 }
 
-func getParentNode(head *tool.ListNode, n int) (parent *tool.ListNode, headIsNthFromEnd bool)  {
+func getParentNode(head *tool.ListNode, n int) (parent *tool.ListNode, headIsNthFromEnd bool) {
 	parent = head
 
 	for head != nil {
@@ -25,7 +25,7 @@ func getParentNode(head *tool.ListNode, n int) (parent *tool.ListNode, headIsNth
 			fmt.Println(head)
 		}
 
-		n --
+		n--
 		fmt.Println(n)
 		head = head.Next
 	}

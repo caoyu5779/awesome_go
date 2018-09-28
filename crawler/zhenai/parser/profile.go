@@ -1,10 +1,10 @@
 package parser
 
 import (
-	"selfLearning/crawler/engine"
 	"regexp"
-	"strconv"
+	"selfLearning/crawler/engine"
 	"selfLearning/crawler/model"
+	"strconv"
 )
 
 //var nameRe = regexp.MustCompile(`<h1 class="ceiling-name ib fl fs24 lh32 blue">([^<])</h1>`)
@@ -21,15 +21,15 @@ var xingzuoRe = regexp.MustCompile(`<td><span class="label">星座：</span><spa
 var houseRe = regexp.MustCompile(`<td><span class="label">住房条件：</span><span field="">([^<]+)</span></td>`)
 var carRe = regexp.MustCompile(`<td><span class="label">是否购车：</span><span field="">([^<]+)</span></td>`)
 
-func ParseProfile(contents []byte, name string) engine.ParseResult  {
+func ParseProfile(contents []byte, name string) engine.ParseResult {
 	profile := model.Profile{}
 	profile.Name = name
-	age,err := strconv.Atoi(extractString(contents, ageRe))
+	age, err := strconv.Atoi(extractString(contents, ageRe))
 	if err == nil {
 		profile.Age = age
 	}
 
-	profile.Marriage = extractString(contents,marriageRe)
+	profile.Marriage = extractString(contents, marriageRe)
 	profile.Gender = extractString(contents, genderRe)
 
 	height, err := strconv.Atoi(extractString(contents, heightRe))
@@ -46,8 +46,8 @@ func ParseProfile(contents []byte, name string) engine.ParseResult  {
 	profile.Education = extractString(contents, educationRe)
 	profile.Occupation = extractString(contents, occupationRe)
 	profile.Hokou = extractString(contents, hokouRe)
-	profile.Xinzuo = extractString(contents,xingzuoRe)
-	profile.House = extractString(contents,houseRe)
+	profile.Xinzuo = extractString(contents, xingzuoRe)
+	profile.House = extractString(contents, houseRe)
 	profile.Car = extractString(contents, carRe)
 
 	result := engine.ParseResult{

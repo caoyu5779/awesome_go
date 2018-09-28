@@ -4,7 +4,7 @@ type Queue struct {
 	Data []int
 }
 
-func (queue *Queue) inQueue(i int){
+func (queue *Queue) inQueue(i int) {
 	queue.Data = append(queue.Data, i)
 }
 
@@ -26,10 +26,10 @@ func (queue *Queue) outQueue() (result int) {
 
 type StackQueue struct {
 	DataStack *Stack
-	stack1 *Stack
+	stack1    *Stack
 }
 
-func (stackQueue *StackQueue) inQueue (i int)  {
+func (stackQueue *StackQueue) inQueue(i int) {
 	if stackQueue.DataStack == nil {
 		stackQueue.DataStack = &Stack{}
 	}
@@ -37,7 +37,7 @@ func (stackQueue *StackQueue) inQueue (i int)  {
 	stackQueue.DataStack.Push(i)
 }
 
-func (stackQueue *StackQueue) outQueue (result int)  {
+func (stackQueue *StackQueue) outQueue(result int) {
 	i := stackQueue.DataStack.Pop()
 
 	for i != 0 {

@@ -4,9 +4,9 @@ import "selfLearning/leetcode/tool"
 
 type TreeNode = tool.TreeNode
 
-const intMax = 1 << 63 -1
+const intMax = 1<<63 - 1
 
-func FindSecondMinimumValue(root * TreeNode) int {
+func FindSecondMinimumValue(root *TreeNode) int {
 	res := intMax
 
 	helper(root, root.Val, &res)
@@ -18,7 +18,7 @@ func FindSecondMinimumValue(root * TreeNode) int {
 	return res
 }
 
-func helper(root *TreeNode, lo int, hi *int)  {
+func helper(root *TreeNode, lo int, hi *int) {
 	if root == nil {
 		return
 	}

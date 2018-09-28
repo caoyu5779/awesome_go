@@ -1,8 +1,8 @@
 package restoreIpAddresses
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestRestoreIpAddresses(t *testing.T) {

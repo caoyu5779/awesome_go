@@ -1,8 +1,8 @@
 package findLongestWord
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestFindLongestWord(t *testing.T) {

@@ -4,7 +4,7 @@ func SearchRange(nums []int, target int) []int {
 	index := search(nums, target)
 
 	if index == -1 {
-		return []int {-1, -1}
+		return []int{-1, -1}
 	}
 
 	first := index
@@ -34,14 +34,14 @@ func SearchRange(nums []int, target int) []int {
 	return []int{first, last}
 }
 
-func search (nums []int, target int) int{
-	low , high := 0, len(nums) - 1
+func search(nums []int, target int) int {
+	low, high := 0, len(nums)-1
 
 	var middle int
 	for low <= high {
 		middle = (low + high) / 2
 
-		switch  {
+		switch {
 		case nums[middle] < target:
 			low = middle + 1
 		case nums[middle] > target:

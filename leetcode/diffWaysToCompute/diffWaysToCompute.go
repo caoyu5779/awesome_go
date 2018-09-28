@@ -15,8 +15,8 @@ func DiffWaysToCompute(input string) []int {
 
 		for i := range s {
 			if s[i] == '+' || s[i] == '-' || s[i] == '*' {
-				for _,left := range dfs(s[:i]){
-					for _,right := range dfs(s[i+1:]){
+				for _, left := range dfs(s[:i]) {
+					for _, right := range dfs(s[i+1:]) {
 						res = append(res, operate(left, right, s[i]))
 					}
 				}
@@ -24,7 +24,7 @@ func DiffWaysToCompute(input string) []int {
 		}
 
 		if len(res) == 0 {
-			temp,_ := strconv.Atoi(s)
+			temp, _ := strconv.Atoi(s)
 			res = append(res, temp)
 		}
 
@@ -34,9 +34,9 @@ func DiffWaysToCompute(input string) []int {
 	return dfs(input)
 }
 
-func operate(a,b int, opt byte) int {
+func operate(a, b int, opt byte) int {
 	switch opt {
-	case '+' :
+	case '+':
 		return a + b
 	case '-':
 		return a - b

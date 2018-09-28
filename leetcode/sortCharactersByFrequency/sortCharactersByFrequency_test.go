@@ -1,8 +1,8 @@
 package sortCharactersByFrequency
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestSortCharactersByFrequency(t *testing.T) {

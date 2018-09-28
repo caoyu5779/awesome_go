@@ -3,6 +3,7 @@ package isPalindrome
 import "selfLearning/leetcode/tool"
 
 type ListNode = tool.ListNode
+
 func IsPalindrome(head *ListNode) bool {
 	nums := make([]int, 0, 64)
 
@@ -12,7 +13,7 @@ func IsPalindrome(head *ListNode) bool {
 		head = head.Next
 	}
 
-	l,r := 0, len(nums) - 1
+	l, r := 0, len(nums)-1
 	//从两头开始比较
 	for l < r {
 		if nums[l] != nums[r] {

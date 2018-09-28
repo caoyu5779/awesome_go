@@ -8,12 +8,12 @@ func ClimbStairs(n int) int {
 	rec := make([]int, n+1)
 	rec[0], rec[1] = 1, 1
 
-	for i:=2; i <= n; i++{
+	for i := 2; i <= n; i++ {
 		//i = 2 rec[2] = 1 +1 = 2
 		// i = 3 rec[3] = 2+1 = 3
-		rec[i] = rec[i-1]+rec[i-2]
+		rec[i] = rec[i-1] + rec[i-2]
 
 	}
 
-	return rec [n]
+	return rec[n]
 }

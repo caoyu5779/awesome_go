@@ -1,8 +1,8 @@
 package findCircleNum
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestFindCircleNum(t *testing.T) {

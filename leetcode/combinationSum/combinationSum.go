@@ -6,14 +6,14 @@ func CombinationSum(candidates []int, target int) [][]int {
 	sort.Ints(candidates)
 
 	res := [][]int{}
-	solution := []int {}
+	solution := []int{}
 
-	cs (candidates, solution, target, &res)
+	cs(candidates, solution, target, &res)
 
 	return res
 }
 
-func cs(candidates, solution []int, target int, result *[][]int )  {
+func cs(candidates, solution []int, target int, result *[][]int) {
 	if target == 0 {
 		*result = append(*result, solution)
 	}
@@ -23,7 +23,7 @@ func cs(candidates, solution []int, target int, result *[][]int )  {
 		return
 	}
 
-	solution = solution[:len(solution) : len(solution)]
-	cs (candidates, append(solution, candidates[0]), target - candidates[0], result)
-	cs (candidates[1:], solution, target, result)
+	solution = solution[:len(solution):len(solution)]
+	cs(candidates, append(solution, candidates[0]), target-candidates[0], result)
+	cs(candidates[1:], solution, target, result)
 }

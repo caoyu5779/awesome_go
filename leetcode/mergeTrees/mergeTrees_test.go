@@ -1,9 +1,9 @@
 package mergeTrees
 
 import (
-	"testing"
-	"selfLearning/leetcode/tool"
 	"reflect"
+	"selfLearning/leetcode/tool"
+	"testing"
 )
 
 func TestMergeTrees(t *testing.T) {
@@ -16,7 +16,7 @@ func TestMergeTrees(t *testing.T) {
 		in2 := []int{10, 40, 20, 30, 70}
 		nums := []int{5, 40, 13, 70, 32, 21}
 
-		got := MergeTrees(tool.PreIn2Tree(pre1, in1), tool.PreIn2Tree(pre2,in2))
+		got := MergeTrees(tool.PreIn2Tree(pre1, in1), tool.PreIn2Tree(pre2, in2))
 		want := tool.Ints2TreeNode(nums)
 
 		if !reflect.DeepEqual(got, want) {

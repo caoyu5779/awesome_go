@@ -1,8 +1,8 @@
 package exist
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestExist(t *testing.T) {
@@ -20,7 +20,7 @@ func TestExist(t *testing.T) {
 		want := true
 
 		if !reflect.DeepEqual(got, want) {
-			t.Errorf("got : %v, want : %v", got, want )
+			t.Errorf("got : %v, want : %v", got, want)
 		}
 	})
 }

@@ -1,13 +1,13 @@
 package findTargetSumWays
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestFindTargetSumWays(t *testing.T) {
 	t.Run("test find target sum ways", func(t *testing.T) {
-		nums := []int {1,1,1,1,1}
+		nums := []int{1, 1, 1, 1, 1}
 
 		got := FindTargetSumWays(nums, 3)
 

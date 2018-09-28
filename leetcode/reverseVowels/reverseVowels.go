@@ -4,10 +4,10 @@ func ReverseVowels(s string) string {
 	//只遍历一次
 	bytes := []byte(s)
 
-	i, j := 0, len(bytes) - 1
+	i, j := 0, len(bytes)-1
 
 	for {
-		for i < len(s) && !isVowels(bytes[i]){
+		for i < len(s) && !isVowels(bytes[i]) {
 			i++
 		}
 

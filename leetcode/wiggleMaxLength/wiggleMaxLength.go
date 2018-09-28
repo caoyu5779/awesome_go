@@ -15,7 +15,7 @@ func WiggleMaxLength(nums []int) int {
 		return func(x int) {
 			var new int
 
-			switch  {
+			switch {
 			case x < 0:
 				new = -1
 			case x > 0:
@@ -24,7 +24,7 @@ func WiggleMaxLength(nums []int) int {
 				return
 			}
 
-			if init * new < 0 {
+			if init*new < 0 {
 				res++
 				init = new
 			}
@@ -35,15 +35,15 @@ func WiggleMaxLength(nums []int) int {
 
 	var i = 1
 
-	for i < size && nums[i] - nums[i-1] == 0{
-		i ++
+	for i < size && nums[i]-nums[i-1] == 0 {
+		i++
 	}
 
 	if i == size {
 		return 1
 	}
 
-	check = checkFunc(nums[i]-nums[i-1])
+	check = checkFunc(nums[i] - nums[i-1])
 
 	for i < size {
 		check(nums[i] - nums[i-1])

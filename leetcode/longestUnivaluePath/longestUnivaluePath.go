@@ -21,7 +21,7 @@ func helper(n *TreeNode, maxLen *int) int {
 
 	//左侧单边最长距离
 	if n.Left != nil && n.Val == n.Left.Val {
-		*maxLen = max (*maxLen, l+1)
+		*maxLen = max(*maxLen, l+1)
 		res = max(res, l+1)
 	}
 
@@ -39,7 +39,7 @@ func helper(n *TreeNode, maxLen *int) int {
 
 }
 
-func max(i,j int) int {
+func max(i, j int) int {
 	if i > j {
 		return i
 	}

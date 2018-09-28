@@ -4,7 +4,7 @@ import "selfLearning/leetcode/tool"
 
 type ListNode = tool.ListNode
 
-func SplitListToParts(root *ListNode, k int) []*ListNode{
+func SplitListToParts(root *ListNode, k int) []*ListNode {
 	size := length(root)
 
 	reminder := size % k
@@ -15,7 +15,7 @@ func SplitListToParts(root *ListNode, k int) []*ListNode{
 
 	for {
 		res[i] = root
-		i ++
+		i++
 
 		if i == k {
 			break
@@ -37,13 +37,13 @@ func SplitListToParts(root *ListNode, k int) []*ListNode{
 			break
 		}
 
-		root.Next, root = nil ,root.Next
+		root.Next, root = nil, root.Next
 	}
 
 	return res
 }
 
-func length(root *ListNode) int{
+func length(root *ListNode) int {
 	res := 0
 
 	for root != nil {

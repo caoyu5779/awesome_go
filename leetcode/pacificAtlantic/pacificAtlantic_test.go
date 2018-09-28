@@ -1,8 +1,8 @@
 package pacificAtlantic
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestPacificAtlantic(t *testing.T) {

@@ -5,7 +5,7 @@ import "fmt"
 func FindTargetSumWays(nums []int, S int) int {
 	sum := 0
 
-	for i:=0; i < len(nums); i++ {
+	for i := 0; i < len(nums); i++ {
 		sum += nums[i]
 	}
 
@@ -13,12 +13,12 @@ func FindTargetSumWays(nums []int, S int) int {
 		return 0
 	}
 
-	if (sum+S)%2 == 1{
+	if (sum+S)%2 == 1 {
 		return 0
 	}
 
 	return calcSumWays(nums, (sum+S)/2)
- }
+}
 
 /*
 	nums 分为两个部分 N P
@@ -31,12 +31,12 @@ func FindTargetSumWays(nums []int, S int) int {
 */
 func calcSumWays(nums []int, target int) int {
 	//dp [i] 表示 nums中 和为i的子集个数
-	dp := make([]int, target + 1)
+	dp := make([]int, target+1)
 
 	dp[0] = 1
 
-	for i := 0; i < len(nums) ; i ++ {
-		for j := target; j >= nums[i]; j -- {
+	for i := 0; i < len(nums); i++ {
+		for j := target; j >= nums[i]; j-- {
 			dp[j] += dp[j-nums[i]]
 			fmt.Println(dp)
 		}

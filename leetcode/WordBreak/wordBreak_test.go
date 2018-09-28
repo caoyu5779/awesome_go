@@ -1,8 +1,8 @@
 package WordBreak
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestWordBreak(t *testing.T) {

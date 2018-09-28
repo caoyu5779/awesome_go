@@ -31,16 +31,16 @@ func Exist(board [][]byte, word string) bool {
 		temp := board[r][c]
 		board[r][c] = 0
 
-		if dfs (r -1 , c, index + 1) || dfs(r+1, c, index+1) || dfs(r,c-1,index+1) || dfs(r,c+1,index+1){
+		if dfs(r-1, c, index+1) || dfs(r+1, c, index+1) || dfs(r, c-1, index+1) || dfs(r, c+1, index+1) {
 			return true
 		}
 		board[r][c] = temp
 		return false
 	}
 
-	for i:=0;i<m;i++ {
-		for j := 0; j < n; j++{
-			if dfs(i,j,0){
+	for i := 0; i < m; i++ {
+		for j := 0; j < n; j++ {
+			if dfs(i, j, 0) {
 				return true
 			}
 		}

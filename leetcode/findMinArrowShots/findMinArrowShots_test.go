@@ -1,8 +1,8 @@
 package findMinArrowShots
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestFindMinArrowShots(t *testing.T) {
@@ -15,6 +15,6 @@ func TestFindMinArrowShots(t *testing.T) {
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got : %v ; want : %v", got, want)
 		}
-		
+
 	})
 }

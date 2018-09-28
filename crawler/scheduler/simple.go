@@ -25,8 +25,5 @@ func (s *SimpleScheduler) ConfigureMasterWorkerChan(c chan engine.Request) {
 func (s *SimpleScheduler) Submit(r engine.Request) {
 	// send request down to worker chan
 	// each request get one goroutine send and finish
-	go func() {s.workerChan <- r}()
+	go func() { s.workerChan <- r }()
 }
-
-
-

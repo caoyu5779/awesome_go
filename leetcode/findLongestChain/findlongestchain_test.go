@@ -1,16 +1,16 @@
 package findLongestChain
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestFindLongestChain(t *testing.T) {
 	t.Run("test fina longest chain", func(t *testing.T) {
-		grid := [][]int {
-			{3,4},
-			{2,3},
-			{1,2},
+		grid := [][]int{
+			{3, 4},
+			{2, 3},
+			{1, 2},
 		}
 
 		got := FindLongestChain(grid)

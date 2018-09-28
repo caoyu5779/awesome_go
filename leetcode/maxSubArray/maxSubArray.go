@@ -17,13 +17,13 @@ func MaxSubArray(nums []int) int {
 	//-2
 	max := temp
 
-	for i := 1; i < n; i++{
+	for i := 1; i < n; i++ {
 		if temp < 0 {
 			temp = nums[i]
-			fmt.Println("-" ,temp)
+			fmt.Println("-", temp)
 		} else {
 			temp += nums[i]
-			fmt.Println("+" ,temp)
+			fmt.Println("+", temp)
 		}
 
 		if max < temp {

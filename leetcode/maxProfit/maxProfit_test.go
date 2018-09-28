@@ -1,13 +1,13 @@
 package maxProfit
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestMaxProfit(t *testing.T) {
 	t.Run("test max profit", func(t *testing.T) {
-		price := []int {7,1,5,3,6,4}
+		price := []int{7, 1, 5, 3, 6, 4}
 
 		got := MaxProfit(price)
 		want := 7

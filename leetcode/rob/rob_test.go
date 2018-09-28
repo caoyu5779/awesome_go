@@ -1,13 +1,13 @@
 package rob
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestRob(t *testing.T) {
 	t.Run("test rob", func(t *testing.T) {
-		nums := []int {1,2,3,1}
+		nums := []int{1, 2, 3, 1}
 
 		got := Rob(nums)
 		want := 4

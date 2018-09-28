@@ -1,7 +1,7 @@
 package tool
 
 type ListNode struct {
-	Val int
+	Val  int
 	Next *ListNode
 }
 
@@ -22,19 +22,17 @@ func S2l(nums []int) *ListNode {
 	}
 
 	res := &ListNode{
-		Val : nums[0],
+		Val: nums[0],
 	}
 
 	temp := res
 
-	for i:=1; i < len(nums) ; i ++ {
+	for i := 1; i < len(nums); i++ {
 		temp.Next = &ListNode{
-			Val:nums[i],
+			Val: nums[i],
 		}
 		temp = temp.Next
 	}
 
 	return res
 }
-
-

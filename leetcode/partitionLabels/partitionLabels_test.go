@@ -1,8 +1,8 @@
 package partitionLabels
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestPartitionLabels(t *testing.T) {
@@ -10,11 +10,11 @@ func TestPartitionLabels(t *testing.T) {
 		S := "ababcbacadefegdehijhklij"
 
 		got := PartitionLabels(S)
-		want := []int {9,7,8}
+		want := []int{9, 7, 8}
 
 		if !reflect.DeepEqual(got, want) {
 			t.Errorf("got : %v, want : %v", got, want)
 		}
-		
+
 	})
 }

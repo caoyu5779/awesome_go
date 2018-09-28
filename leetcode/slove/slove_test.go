@@ -1,8 +1,8 @@
 package slove
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestSlove(t *testing.T) {

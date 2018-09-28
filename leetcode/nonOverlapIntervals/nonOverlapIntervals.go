@@ -18,10 +18,10 @@ func NonOverlapIntervals(intervals []Interval) int {
 	sort.Sort(B(intervals))
 
 	for _, v := range intervals {
-		if end <= v.Start{
+		if end <= v.Start {
 			end = v.End
 		} else {
-			res ++
+			res++
 		}
 	}
 	return res
@@ -33,10 +33,10 @@ func (a B) Len() int {
 	return len(a)
 }
 
-func (a B) Swap(i,j int) {
+func (a B) Swap(i, j int) {
 	a[i], a[j] = a[j], a[i]
 }
 
-func (a B) Less(i,j int) bool  {
+func (a B) Less(i, j int) bool {
 	return a[i].End < a[j].End
 }

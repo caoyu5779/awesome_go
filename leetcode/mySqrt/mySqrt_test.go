@@ -1,8 +1,8 @@
 package mySqrt
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestMySqrt(t *testing.T) {

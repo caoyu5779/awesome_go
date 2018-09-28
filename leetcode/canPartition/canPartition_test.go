@@ -1,13 +1,13 @@
 package canPartition
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestCanPartition(t *testing.T) {
 	t.Run("test can partition", func(t *testing.T) {
-		nums := []int {1,5,11,5}
+		nums := []int{1, 5, 11, 5}
 
 		got := CanPartition(nums)
 

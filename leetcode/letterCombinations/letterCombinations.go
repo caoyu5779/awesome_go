@@ -18,11 +18,11 @@ func LetterCombinations(digits string) []string {
 
 	ret := []string{""}
 
-	for i:=0; i < len(digits); i++ {
+	for i := 0; i < len(digits); i++ {
 		temp := []string{}
 
-		for j:=0; j < len(ret); j ++ {
-			for k :=0; k < len(m[digits[i]]); k ++{
+		for j := 0; j < len(ret); j++ {
+			for k := 0; k < len(m[digits[i]]); k++ {
 				temp = append(temp, ret[j]+m[digits[i]][k])
 			}
 		}
